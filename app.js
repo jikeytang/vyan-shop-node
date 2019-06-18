@@ -1,7 +1,12 @@
-const express = reuqire('express')
+const express = require('express')
 const app = express()
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+const router = require('./routes/index')
 
-module.exports = app
+app.use(router)
+
+app.listen(9000, function() {
+  console.log('Node app start at port 9000')
+})
+
+// module.exports = app
