@@ -1,3 +1,3 @@
 module.exports = {
-  dbConnect: 'mongodb://localhost/vyan-shop'
+  db: 'mongodb://localhost/vyan-shop'
 }
