@@ -9,8 +9,8 @@ const app = express()
 
 app.use(cors())
 app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json()) // 创建 application/json 解析
+app.use(bodyParser.urlencoded({ extended: false })) // 创建 application/x-www-form-urlencoded 解析
 app.use(cookieParser('vyan-shop'))
 
 app.use(router)

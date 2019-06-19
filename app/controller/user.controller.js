@@ -3,6 +3,7 @@ const User = require('../models/user.model')
 const UserController = {
   login (req, res) {
     const { username, password } = req.body
+
     console.log('username', username)
 
     User.findOne({ username }, (err, doc) => {
