@@ -10,7 +10,7 @@ const UserController = {
       }
 
       if (password === doc.password) {
-        req.session.username = doc._id
+        req.session.userId = doc._id
         return res.json({
           code: 0,
           result: {
@@ -21,6 +21,10 @@ const UserController = {
         return res.json({ code: 1, msg: '密码错误' })
       }
     })
+  },
+  logout (req, res) {
+    req.session.userId = null
+    return res.json({ code: 1, msg: '已退出' })
   }
 }
 
