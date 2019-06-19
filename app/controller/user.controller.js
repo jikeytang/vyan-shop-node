@@ -4,13 +4,21 @@ const UserController = {
   login (req, res) {
     const { username, password } = req.body
 
-    console.log('username', username)
-
     User.findOne({ username }, (err, doc) => {
-      console.log('doc', doc)
-      console.log('err', err)
       if (!doc) {
         return res.json({ code: 1, msg: '用户不存在' })
+      }
+
+      if (password === doc.password) {
+        req.session.username = doc._id
+        return res.json({
+          code: 0,
+          result: {
+            userInfo: doc
+          }
+        })
+      } else {
+        return res.json({ code: 1, msg: '密码错误' })
       }
     })
   }
