@@ -8,13 +8,6 @@ router.get('/', (req, res) => {
   res.end('Hello World')
 })
 
-// router.post('/login', (req, res) => {
-//   const username = req.body.username
-//   const password = req.body.password
-//   console.log(username)
-//   console.log(password)
-// })
-
 router
   .post(`${prefix}user/login`, controller.user.login)
   .post(`${prefix}user/signIn`, controller.user.signIn)
