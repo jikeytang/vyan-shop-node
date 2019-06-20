@@ -9,6 +9,22 @@ const UserController = {
    */
   signIn (req, res) {
     const { username, password } = req.body
+
+    User.findOne({ username }, (err, doc) => {
+      if (doc) {
+        return res.json({ code: 1, msg: '用户已存在' })
+      }
+      const userModel = new User({ username, password })
+
+      userModel.save((error, data) => {
+        if (error) {
+          return res.json({ code: 1, msg: error })
+        }
+        const { username, _id } = data
+
+        return res.json({ code: 0, data: { username, _id }})
+      })
+    })
   },
 
   /**
@@ -64,7 +80,7 @@ const UserController = {
       return res.json({ code: 0, doc })
     })
   },
-  delete (req, res) {
+  remove (req, res) {
     User.remove({ _id: req.body.id }, () => {
       return res.json({ code: 0, msg: '删除成功' })
     })

@@ -13,6 +13,6 @@ router
   .post(`${prefix}user/signIn`, controller.user.signIn)
   .post(`${prefix}user/signOut`, controller.user.signOut)
   .post(`${prefix}user/update`, controller.user.update)
-  .post(`${prefix}user/delete`, controller.user.delete)
+  .post(`${prefix}user/remove`, controller.user.remove)
 
 module.exports = router
