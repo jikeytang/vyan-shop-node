@@ -1,7 +1,6 @@
 const User = require('../models/user.model')
 
 const UserController = {
-
   /**
    * 注册
    * @param req
@@ -22,11 +21,10 @@ const UserController = {
         }
         const { username, _id } = data
 
-        return res.json({ code: 0, data: { username, _id }})
+        return res.json({ code: 0, data: { username, _id } })
       })
     })
   },
-
   /**
    * 登录
    * @param req
@@ -55,7 +53,6 @@ const UserController = {
 
     })
   },
-
   /**
    * 退出
    * @param req
@@ -67,7 +64,6 @@ const UserController = {
 
     return res.json({ code: 1, msg: '已退出' })
   },
-
   /**
    * 更新用户资料
    * @param req
