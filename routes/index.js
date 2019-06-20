@@ -1,8 +1,7 @@
 const express = require('express')
-const app = express()
 const router = express.Router()
 const controller = require('../app/controller')
-const prefix = '/admin/user/'
+const prefix = '/admin/'
 
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' })
@@ -17,10 +16,10 @@ router.get('/', (req, res) => {
 // })
 
 router
-  .post(`${prefix}login`, controller.user.login)
-  .post(`${prefix}signIn`, controller.user.signIn)
-  .post(`${prefix}signOut`, controller.user.signOut)
-  .post(`${prefix}update`, controller.user.update)
-  .post(`${prefix}delete`, controller.user.delete)
+  .post(`${prefix}user/login`, controller.user.login)
+  .post(`${prefix}user/signIn`, controller.user.signIn)
+  .post(`${prefix}user/signOut`, controller.user.signOut)
+  .post(`${prefix}user/update`, controller.user.update)
+  .post(`${prefix}user/delete`, controller.user.delete)
 
 module.exports = router

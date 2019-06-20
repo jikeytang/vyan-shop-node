@@ -1,6 +1,7 @@
 const User = require('../models/user.model')
 
 const UserController = {
+
   /**
    * 注册
    * @param req
@@ -9,6 +10,7 @@ const UserController = {
   signIn (req, res) {
     const { username, password } = req.body
   },
+
   /**
    * 登录
    * @param req
@@ -24,17 +26,20 @@ const UserController = {
 
       if (password === doc.password) {
         req.session.userId = doc._id
+
         return res.json({
           code: 0,
           result: {
             userInfo: doc
           }
         })
-      } else {
-        return res.json({ code: 1, msg: '密码错误' })
       }
+
+      return res.json({ code: 1, msg: '密码错误' })
+
     })
   },
+
   /**
    * 退出
    * @param req
@@ -43,8 +48,10 @@ const UserController = {
    */
   signOut (req, res) {
     req.session.userId = null
+
     return res.json({ code: 1, msg: '已退出' })
   },
+
   /**
    * 更新用户资料
    * @param req
@@ -58,7 +65,7 @@ const UserController = {
     })
   },
   delete (req, res) {
-    User.remove({ _id: req.body.id }, (err, doc) => {
+    User.remove({ _id: req.body.id }, () => {
       return res.json({ code: 0, msg: '删除成功' })
     })
   }
