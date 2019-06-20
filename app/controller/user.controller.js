@@ -44,6 +44,23 @@ const UserController = {
   signOut (req, res) {
     req.session.userId = null
     return res.json({ code: 1, msg: '已退出' })
+  },
+  /**
+   * 更新用户资料
+   * @param req
+   * @param res
+   */
+  update (req, res) {
+    const { body } = req
+
+    User.findByIdAndUpdate(req.session.userId, { email: body.email, phone: body.phone }, (err, doc) => {
+      return res.json({ code: 0, doc })
+    })
+  },
+  delete (req, res) {
+    User.remove({ _id: req.body.id }, (err, doc) => {
+      return res.json({ code: 0, msg: '删除成功' })
+    })
   }
 }
 
