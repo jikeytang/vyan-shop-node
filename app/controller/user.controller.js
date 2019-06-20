@@ -1,6 +1,19 @@
 const User = require('../models/user.model')
 
 const UserController = {
+  /**
+   * 注册
+   * @param req
+   * @param res
+   */
+  signIn (req, res) {
+    const { username, password } = req.body
+  },
+  /**
+   * 登录
+   * @param req
+   * @param res
+   */
   login (req, res) {
     const { username, password } = req.body
 
@@ -22,7 +35,13 @@ const UserController = {
       }
     })
   },
-  logout (req, res) {
+  /**
+   * 退出
+   * @param req
+   * @param res
+   * @returns {*}
+   */
+  signOut (req, res) {
     req.session.userId = null
     return res.json({ code: 1, msg: '已退出' })
   }
