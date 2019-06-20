@@ -1,6 +1,6 @@
-const User = require('../models/user.model')
+const Order = require('../models/order.model')
 
-const UserController = {
+const OrderController = {
   /**
    * 注册
    * @param req
@@ -83,4 +83,4 @@ const UserController = {
   }
 }
 
-module.exports = UserController
+module.exports = OrderController
