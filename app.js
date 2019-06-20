@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const cors = require('cors')
 const router = require('./routes/index')
-const path = require('path')
 
 const app = express()
 
