@@ -6,7 +6,7 @@ const UserController = {
    * @param req
    * @param res
    */
-  signIn (req, res) {
+  signIn(req, res) {
     const { username, password } = req.body
 
     User.findOne({ username }, (err, doc) => {
@@ -30,7 +30,7 @@ const UserController = {
    * @param req
    * @param res
    */
-  login (req, res) {
+  login(req, res) {
     const { username, password } = req.body
 
     User.findOne({ username }, (err, doc) => {
@@ -50,7 +50,6 @@ const UserController = {
       }
 
       return res.json({ code: 1, msg: '密码错误' })
-
     })
   },
   /**
@@ -59,7 +58,7 @@ const UserController = {
    * @param res
    * @returns {*}
    */
-  signOut (req, res) {
+  signOut(req, res) {
     req.session.userId = null
 
     return res.json({ code: 1, msg: '已退出' })
@@ -69,14 +68,18 @@ const UserController = {
    * @param req
    * @param res
    */
-  update (req, res) {
+  update(req, res) {
     const { body } = req
 
-    User.findByIdAndUpdate(req.session.userId, { email: body.email, phone: body.phone }, (err, doc) => {
-      return res.json({ code: 0, doc })
-    })
+    User.findByIdAndUpdate(
+      req.session.userId,
+      { email: body.email, phone: body.phone },
+      (err, doc) => {
+        return res.json({ code: 0, doc })
+      }
+    )
   },
-  remove (req, res) {
+  remove(req, res) {
     User.remove({ _id: req.body.id }, () => {
       return res.json({ code: 0, msg: '删除成功' })
     })
