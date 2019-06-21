@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "lint": "eslint --fix --ext .js ."
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,15 @@
     "dayjs": "^1.8.14",
     "debug": "^4.1.1",
     "ejs": "^2.6.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": ">=9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-prettier": "^5.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "mongoose": "^5.6.0",
     "morgan": "^1.9.1",
+    "prettier": "^1.18.2",
     "utility": "^1.16.1"
   }
 }

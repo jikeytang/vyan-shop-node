@@ -1,6 +1,6 @@
 module.exports = {
-  db: 'mongodb://localhost/vyan-shop',
-  options: {
-    useNewUrlParser: true
-  }
+	db: 'mongodb://localhost/vyan-shop',
+	options: {
+		useNewUrlParser: true
+	}
 }
