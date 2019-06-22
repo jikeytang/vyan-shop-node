@@ -1,9 +1,8 @@
 # vyan-shop-node
-[微燕商城 - vyan-shop-weixin](https://github.com/jikeytang/vyan-shop-weixin) server端
-[微燕商城 - vyan-shop-admin](https://github.com/jikeytang/vyan-shop-admin) server端
+[微燕商城微信端 - vyan-shop-weixin](https://github.com/jikeytang/vyan-shop-weixin)  
+[微燕商城admin管理 - vyan-shop-admin](https://github.com/jikeytang/vyan-shop-admin)
 
 ---
-[TOC]
 
 [vyan-shop-admin](https://github.com/jikeytang/vyan-shop-admin) `0.1.0`版本成型之后，可以腾出点时间来继续下一步了，现在还处在mock数据阶段，各业务场景并不完善，数据也不能正常流转，从产品角度来看也是不可用的，这样看来服务端提供接口数据的项目也呼之欲出。初衷还是一样的，整个介绍语言通俗易懂，项目简单易跑，不求多复杂，至少要完整。有阶段性的结果，版本控制的意识，前期的需求收集做加法，后期的开发做减法。
 
