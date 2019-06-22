@@ -29,4 +29,4 @@ app.listen(9000, function() {
   console.log('Node app start at port 9000')
 })
 
-// module.exports = app
+// module.exports = app // 这是 4.x 默认的配置，分离了 app 模块,将它注释即可，上线时可以重新改回来

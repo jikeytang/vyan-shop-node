@@ -83,22 +83,59 @@ Postman | Http请求工具 | [https://www.getpostman.com/](https://www.getpostma
 Robo 3T | MongoDB可视化工具 | [https://robomongo.org/](https://robomongo.org/)
 
 #### 1.4 文件结构
-
+[tree 命令输出结构](https://blog.csdn.net/qq673318522/article/details/53713903) `tree -L 3 -I "node_modules"`
 ```javascript
-
+.
+├── app                                     // 所有相关代码
+│   ├── controller                          // 控制器
+│   │   ├── adv.controller.js               // 常用操作/广告管理
+│   │   ├── index.js                        // 所有相关代码
+│   │   ├── order.controller.js             // 订单管理
+│   │   └── user.controller.js              // 登录用户相关
+│   └── models                              // 所有Model
+│       ├── adv.model.js                    // 常用操作/广告管理
+│       ├── connect.js                      // 数据库连接
+│       ├── order.model.js                  // 订单管理
+│       └── user.model.js                   // 登录用户相关
+├── app.js                                  // 逻辑入口
+├── config                                  // 配置目录
+│   └── index.js                            // 配置文件
+├── nodemon.json                            // nodemon配置文件
+├── package-lock.json                       
+├── package.json                            
+├── routes                                  // 路由控制
+│   └── index.js                            
+└── uploads                                 // 上传目录
+    └── test.txt
 ```
 
-需要注意的点：
+PS：
+
+- `user.controller.js，user.model.js` 取名的目的为多次打开相同文件容易区分
+- 纯接口项目无 `public,views` 目录
 
 
 ### 2. 开发约定
+#### 2.1 [nodeman](https://github.com/remy/nodemon#nodemon) 
+项目采用nodeman来启动整个服务，关于他的[介绍](https://juejin.im/post/5b5005f7f265da0f66401fe7)，可以在命令行直接输入`rs`快速启动，在script中增加方便启动项目。
+```shell
+"scripts": {
+  "dev": "nodemon app.js",
+  "start": "nodemon app.js"
+},
+```
+#### 2.2 [mlab](https://mlab.com/)
+数据库使用在线免费mlab服务，参考自[N-blog教程](https://github.com/nswbmw/N-blog)，本地客户端[robo 3T](https://robomongo.org/)连接[教程](https://stackoverflow.com/questions/44422694/how-would-someone-connect-their-mlab-mongodb-database-to-robomongo-when-mlab-onl)，备选[方案](https://university.mongodb.com/)。
+
+#### 2.3 代码风格
+遵守eslint，并且文件`vyan-shop-node/.eslintrc.json`可被修改
 
 ### 3. 
 
-
 ### 4. 
 
-### 5. 待开发的
+### 5. 
+
 
 
 
