@@ -15,4 +15,7 @@ router
   .post(`${prefix}user/update`, controller.user.update)
   .post(`${prefix}user/remove`, controller.user.remove)
 
+  .post(`${prefix}common/adv/list`, controller.adv.remove)
+
+
 module.exports = router

@@ -1,6 +1,9 @@
 const Adv = require('../models/adv.model')
 
 const AdvController = {
+  list (req, res) {
+
+  },
   /**
    * 更新用户资料
    * @param req
