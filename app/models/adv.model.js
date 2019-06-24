@@ -2,11 +2,9 @@ const mongoose = require('./connect')
 
 const AdvSchema = mongoose.Schema(
 	{
-		username: String,
-		password: String,
-		email: String,
-		phone: String,
-		nickName: String
+		title: String,
+		img: String,
+		link: String
 	},
 	{ collection: 'adv' }
 )
