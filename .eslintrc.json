@@ -1,13 +1,20 @@
 {
   "env": {
+    "browser": true,
     "es6": true,
     "node": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
     "sourceType": "script"
   },
   "rules": {
+    "node/no-deprecated-api": "error",
+    "prettier/prettier": "error",
     "no-console": 0,
     "no-unused-vars": "error",
     "no-use-before-define": "error",
