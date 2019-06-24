@@ -1,15 +1,4 @@
-const mongoose = require('mongoose')
-const config = require('../../config/index')
-
-mongoose.connect(config.db, {
-	useCreateIndex: true,
-	useNewUrlParser: true
-})
-const db = mongoose.connection
-
-db.on('error', function(err) {
-	console.log(__filename, err.message)
-})
+const mongoose = require('./connect')
 
 const ProductSchema = mongoose.Schema(
 	{

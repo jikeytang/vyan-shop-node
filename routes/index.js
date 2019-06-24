@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../app/controller')
 const prefix = '/admin/'
-const productRouter = require('./product/index')
+const productRouter = require('./product/product.router')
 
 router.get('/', (req, res) => {
 	res.writeHead(200, { 'Content-Type': 'text/plain' })
@@ -16,6 +16,6 @@ router
 	.post(`${prefix}user/update`, controller.user.update)
 	.post(`${prefix}user/remove`, controller.user.remove)
 
-router.use('/product', productRouter)
+router.use(`${prefix}product`, productRouter)
 
 module.exports = router

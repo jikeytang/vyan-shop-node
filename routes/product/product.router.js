@@ -2,25 +2,45 @@ const express = require('express')
 const { product } = require('../../app/controller/index')
 const router = express.Router()
 
-// middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-	console.log('Time: ', Date.now())
-	next()
-})
 // 默认路由配置
 // http://localhost:9000/product
 
-// router.get('/', function(req, res) {
-//   res.send('Birds home page');
-// });
+router.get('/', (req, res) => {
+	return res.json({
+		description: '商品管理相关接口',
+		parameter: {
+			addItem: {
+				path: '/addItem',
+				description: '用于添加商品信息'
+			},
+			removeItem: {
+				path: '/removeItem',
+				description: '用于删除商品信息'
+			},
+			updatedItem: {
+				path: '/updatedItem',
+				description: '用于更新商品信息'
+			},
+			list: {
+				path: '/list',
+				description: '用于查询商品信息列表'
+			}
+		}
+	})
+})
 
-// 添加商品信息
+/**
+ * 添加商品信息接口
+ * @param req
+ * @param res
+ */
 router
 	.route('/addItem')
 	.post(product.addProductItem)
 	.get((req, res) => {
 		return res.json({
 			description: '用于添加商品信息',
+			type: 'POST',
 			parameter: {
 				brandName: {
 					type: 'String',
@@ -65,13 +85,18 @@ router
 			}
 		})
 	})
-// 删除商品信息
+/**
+ * 删除商品信息接口
+ * @param req
+ * @param res
+ */
 router
 	.route('/removeItem')
 	.post(product.removeProducItem)
 	.get((req, res) => {
 		return res.json({
 			description: '用于删除商品信息',
+			type: 'POST',
 			parameter: {
 				id: {
 					type: 'String or Array',
@@ -81,10 +106,15 @@ router
 			}
 		})
 	})
-// 修改商品信息
+/**
+ * 更新商品信息接口
+ * @param req
+ * @param res
+ */
 router.post('/updatedItem', product.updatedProducItem).get((req, res) => {
 	return res.json({
 		description: '用于修改商品信息',
+		type: 'POST',
 		parameter: {
 			id: {
 				type: 'String',
@@ -94,13 +124,18 @@ router.post('/updatedItem', product.updatedProducItem).get((req, res) => {
 		}
 	})
 })
-// 查询商品列表
+/**
+ * 获取商品信息列表接口
+ * @param req
+ * @param res
+ */
 router
 	.route('/list')
 	.post(product.getProductList)
 	.get((req, res) => {
 		return res.json({
-			description: '用于查询商品列表',
+			description: '用于获取商品信息列表',
+			type: 'POST',
 			parameter: {
 				name: {
 					type: 'String',

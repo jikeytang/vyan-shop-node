@@ -1,6 +1,11 @@
-const Product = require('../models/product')
+const Product = require('../models/product.model')
 
 const ProductController = {
+	/**
+	 * 添加商品信息
+	 * @param req
+	 * @param res
+	 */
 	addProductItem(req, res) {
 		const data = req.body
 
@@ -21,6 +26,11 @@ const ProductController = {
 			return res.json({ code: 200, msg: '商品信息添加成功', data: item })
 		})
 	},
+	/**
+	 * 删除商品信息
+	 * @param req
+	 * @param res
+	 */
 	removeProducItem(req, res) {
 		const id = req.body.id
 
@@ -51,6 +61,11 @@ const ProductController = {
 			})
 		})
 	},
+	/**
+	 * 更新商品信息
+	 * @param req
+	 * @param res
+	 */
 	updatedProducItem(req, res) {
 		const { id, updateData } = req.body
 
@@ -86,6 +101,11 @@ const ProductController = {
 			})
 		})
 	},
+	/**
+	 * 获取商品信息列表
+	 * @param req
+	 * @param res
+	 */
 	getProductList(req, res) {
 		const { name, productSn, brandName, publishStatus, verifyStatus } = req.body
 		const queryArr = []
