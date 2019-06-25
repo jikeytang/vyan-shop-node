@@ -16,4 +16,4 @@ yarn-error.log*
 *.sw?
 
 package-lock.json
-config/index.js
+config/index.js*
