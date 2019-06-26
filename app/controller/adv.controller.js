@@ -1,11 +1,11 @@
 const Adv = require('../models/adv.model')
 
 const AdvController = {
-  /**
-   * 新增banner
-   * @param {*} req 
-   * @param {*} res 
-   */
+	/**
+	 * 新增Banner
+	 * @param req
+	 * @param res
+	 */
 	add(req, res) {
 		const info = req.body
 
