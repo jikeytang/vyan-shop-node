@@ -30,15 +30,13 @@ const AdvController = {
 	 * @param res
 	 */
 	list(req, res) {
-		Adv.find({})
-			.sort({ id: -1 })
-			.exec((err, item) => {
-				if (err) {
-					return res.json({ code: 0, msg: '接口出错' })
-				}
+		Adv.find({}).sort({ id: -1 }).exec((err, item) => {
+			if (err) {
+				return res.json({ code: 0, msg: '接口出错' })
+			}
 
-				return res.json({ code: 1, item })
-			})
+			return res.json({ code: 1, item })
+		})
 	},
 	/**
 	 * 更新用户资料
@@ -48,10 +46,7 @@ const AdvController = {
 	update(req, res) {
 		const { body } = req
 
-		Adv.findByIdAndUpdate(
-			req.session.userId,
-			{ email: body.email, phone: body.phone },
-			(err, doc) => {
+		Adv.findByIdAndUpdate(req.session.userId,	{ email: body.email, phone: body.phone },	(err, doc) => {
 				return res.json({ code: 0, doc })
 			}
 		)
