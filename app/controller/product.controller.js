@@ -110,35 +110,36 @@ const ProductController = {
 		const { name, productSn, brandName, publishStatus, verifyStatus } = req.body
 		const queryArr = []
 
-		if (typeof name !== 'undefined') {
+		if (typeof name !== 'undefined' && name !== '') {
 			// 商品名称
 			queryArr.push({
 				name: name
 			})
 		}
-		if (typeof productSn !== 'undefined') {
+		if (typeof productSn !== 'undefined' && productSn !== '') {
 			queryArr.push({
 				productSn: productSn
 			}) // 货号
 		}
-		if (typeof brandName !== 'undefined') {
+		if (typeof brandName !== 'undefined' && brandName !== '') {
 			// 品牌名
 			queryArr.push({
 				brandName: brandName
 			})
 		}
-		if (typeof publishStatus !== 'undefined') {
+		if (typeof publishStatus !== 'undefined' && publishStatus !== '') {
 			// 上架状态
 			queryArr.push({
 				publishStatus: publishStatus
 			})
 		}
-		if (typeof verifyStatus !== 'undefined') {
+		if (typeof verifyStatus !== 'undefined' && verifyStatus !== '') {
 			// 审核状态
 			queryArr.push({
 				verifyStatus: verifyStatus
 			})
 		}
+		console.log(queryArr)
 		if (queryArr.length) {
 			Product.find({
 				$and: queryArr
