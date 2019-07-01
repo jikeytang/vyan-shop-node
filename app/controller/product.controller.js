@@ -10,14 +10,20 @@ const ProductController = {
 		const data = req.body
 
 		Product.create({
+			categories: data.categories, // 商品分类
+			name: data.name, // 商品名称
 			brandName: data.brandName, // 品牌
+			description: data.description, // 商品介绍
+			productSn: data.productSn, // 货号
+			price: data.price, // 价格
+			originalPrice: data.originalPrice, // 市场价
+			stock: data.stock, // 库存
+			unit: data.unit, // 计量单位
+			weight: data.weight, // 	重量
+			sort: data.sort, // 排序
 			publishStatus: data.publishStatus, // 上架状态
 			verifyStatus: data.verifyStatus, // 审核状态
-			pic: data.pic, // 商品图片地址
-			name: data.name, // 商品名称
-			price: data.price, // 价格
-			productSn: data.productSn, // 货号
-			sort: data.sort // 排序
+			pic: data.pic // 商品图片地址
 		}).then((item, err) => {
 			if (err) {
 				return res.json({ code: 500, msg: '商品信息添加失败', data: err })
