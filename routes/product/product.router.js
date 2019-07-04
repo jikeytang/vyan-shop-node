@@ -121,7 +121,7 @@ router
  */
 router
 	.route('/removeItem')
-	.post(product.removeProducItem)
+	.post(product.remove)
 	.get((req, res) => {
 		return res.json({
 			description: '用于删除商品信息',
@@ -140,7 +140,7 @@ router
  * @param req
  * @param res
  */
-router.post('/updatedItem', product.updatedProducItem).get((req, res) => {
+router.post('/updatedItem', product.updated).get((req, res) => {
 	return res.json({
 		description: '用于修改商品信息',
 		type: 'POST',
