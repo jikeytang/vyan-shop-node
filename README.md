@@ -32,6 +32,7 @@ Morgan |  日志中间件 | [https://github.com/expressjs/morgan](https://github
 CORS  |  跨域模块 | [https://www.npmjs.com/package/cors](https://www.npmjs.com/package/cors)
 Dayjs  |  类似Moment日期库 | [https://github.com/iamkun/dayjs](https://github.com/iamkun/dayjs)
 Utility  |  工具集合 | [https://github.com/node-modules/utility](https://github.com/node-modules/utility)
+Nodeman  |  自启动工具 | [nodeman](https://github.com/remy/nodemon)
 
 
 - MongoDB
@@ -116,7 +117,7 @@ PS：
 
 
 ### 2. 开发约定
-#### 2.1 [nodeman](https://github.com/remy/nodemon#nodemon) 
+#### 2.1 [nodeman](https://github.com/remy/nodemon) 
 项目采用nodeman来启动整个服务，关于他的[介绍](https://juejin.im/post/5b5005f7f265da0f66401fe7)，可以在命令行直接输入`rs`快速启动，在script中增加方便启动项目。
 ```shell
 "scripts": {
