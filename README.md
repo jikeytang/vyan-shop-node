@@ -133,9 +133,22 @@ PS：
 
 ### 3. 开发说明
 #### 3.1 用户登录
-#### 3.2 商品管理
-#### 3.3 订单管理 此模块由[广州-天蝎](https://github.com/yhtx1997)完成
+#### 3.2 商品管理 此模块由[天蝎](https://github.com/yhtx1997)完成
 
+商品管理包含五个数据接口，四个数据操作方法，采用模块式开发的方式进行路由的编写，使其便于项目后期的拓展与修改。  
+
+商品管理的所有接口都可以通过 GET 方式访问来获取这个接口需要前端发送数据的名称与格式，这点是为了可以让前后端更好进行数据的传输。
+
+为了避免回调地狱以及提升代码可读性从而采用 then 的方式来处理 model 方法返回的数据。这里需要注意的是：model 方法支持的回调函数 默认第一个返回参数是错误信息。
+
+1. '/admin/product' 全部可使用接口的描述信息
+1. '/admin/product/addItem' 用于添加商品信息
+1. '/admin/product/removeItem' 用于删除商品信息
+1. '/admin/product/updatedItem' 用于更新商品信息
+1. '/admin/product/list' 用于查询商品信息列表
+接口具体内容详见[文件](https://github.com/yhtx1997/vyan-shop-node/blob/master/app/controller/product.controller.js)
+
+#### 3.3 订单管理
 ### 4. 待开发的
 
 
