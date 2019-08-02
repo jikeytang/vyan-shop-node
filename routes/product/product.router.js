@@ -42,10 +42,45 @@ router
 			description: '用于添加商品信息',
 			type: 'POST',
 			parameter: {
+				categories: {
+					type: 'String',
+					required: 'true',
+					description: '商品分类'
+				},
 				brandName: {
 					type: 'String',
 					required: 'true',
 					description: '品牌名'
+				},
+				description: {
+					type: 'String',
+					required: 'false',
+					description: '商品介绍'
+				},
+				productSn: {
+					type: 'String',
+					required: 'true',
+					description: '货号'
+				},
+				price: {
+					type: 'String',
+					required: 'true',
+					description: '商品售价'
+				},
+				originalPrice: {
+					type: 'String',
+					required: 'true',
+					description: '市场价格'
+				},
+				stock: {
+					type: 'Number',
+					required: 'true',
+					default: 0,
+					description: '库存'
+				},
+				unit: {
+					type: 'String',
+					description: '计量单位'
 				},
 				publishStatus: {
 					type: 'Boolean',
@@ -67,15 +102,9 @@ router
 					required: 'true',
 					description: '商品名称'
 				},
-				price: {
+				weight: {
 					type: 'String',
-					required: 'true',
-					description: '价格'
-				},
-				productSn: {
-					type: 'String',
-					required: 'true',
-					description: '货号'
+					description: '重量'
 				},
 				sort: {
 					type: 'String',
@@ -92,7 +121,7 @@ router
  */
 router
 	.route('/removeItem')
-	.post(product.removeProducItem)
+	.post(product.remove)
 	.get((req, res) => {
 		return res.json({
 			description: '用于删除商品信息',
@@ -111,7 +140,7 @@ router
  * @param req
  * @param res
  */
-router.post('/updatedItem', product.updatedProducItem).get((req, res) => {
+router.post('/updatedItem', product.updated).get((req, res) => {
 	return res.json({
 		description: '用于修改商品信息',
 		type: 'POST',
@@ -137,20 +166,20 @@ router
 			description: '用于获取商品信息列表',
 			type: 'POST',
 			parameter: {
-				name: {
+				categories: {
 					type: 'String',
-					required: 'false',
-					description: '商品名称'
-				},
-				productSn: {
-					type: 'String',
-					required: 'false',
-					description: '货号'
+					required: 'true',
+					description: '商品分类'
 				},
 				brandName: {
 					type: 'String',
 					required: 'false',
 					description: '品牌名'
+				},
+				name: {
+					type: 'String',
+					required: 'true',
+					description: '商品名称'
 				},
 				publishStatus: {
 					type: 'Boolean',
