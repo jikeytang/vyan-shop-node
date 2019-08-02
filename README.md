@@ -32,7 +32,7 @@ Morgan |  日志中间件 | [https://github.com/expressjs/morgan](https://github
 CORS  |  跨域模块 | [https://www.npmjs.com/package/cors](https://www.npmjs.com/package/cors)
 Dayjs  |  类似Moment日期库 | [https://github.com/iamkun/dayjs](https://github.com/iamkun/dayjs)
 Utility  |  工具集合 | [https://github.com/node-modules/utility](https://github.com/node-modules/utility)
-Nodeman  |  自启动工具 | [nodeman](https://github.com/remy/nodemon)
+Nodemon  |  自启动工具 | [https://github.com/remy/nodemon](https://github.com/remy/nodemon)
 
 
 - MongoDB
