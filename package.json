@@ -33,7 +33,7 @@
     "eslint-config-prettier": "^5.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
-    "mongoose": "^5.6.0",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "prettier": "^1.18.2",
     "utility": "^1.16.1"
